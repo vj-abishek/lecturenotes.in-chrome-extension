@@ -47,9 +47,9 @@ function randomScroll() {
                 <div style="margin-left:9px">Downloaded</div>
             </div>
             `
-            setTimeout(()=>{
+            setTimeout(() => {
                 button.innerText = 'Download';
-            },3000)
+            }, 3000)
         }
     }, 1000)
 }
@@ -59,32 +59,23 @@ function buttonClicked() {
     i = 0;
 
     button.innerText = 'Loading please wait...';
-    //setTimeout(() => {
     reader = document.querySelector("main");
     pageNodes = reader.querySelector("div").children;
     reader.scroll(0, 0);
     main();
     randomScroll();
-    // }, 1000);
 }
 
 function constructButton() {
-
-
-
     inserted = true;
     const dom = document.querySelector('body');
     const button = document.createElement('button');
-    //clean this
-    button.style.display = "flex";
     button.setAttribute('class', 'dl-button');
     button.innerHTML = `
         <div>Download PDF</div>
-        `;
+    `;
     button.onclick = buttonClicked;
     dom.appendChild(button);
-
-
 }
 
 // A helper to listen for params change
